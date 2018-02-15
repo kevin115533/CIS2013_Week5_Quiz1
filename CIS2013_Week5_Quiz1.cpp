@@ -3,8 +3,6 @@
 
 using namespace std;
 
-
-
 void primeNum(int x, int y) {
 	for (int i = x; i <= y; i++) {
 		bool prime = true;
@@ -16,7 +14,7 @@ void primeNum(int x, int y) {
 	}
 }
 
-void lcm(int x, int y) {
+int leastComm(int x, int y) {
 	int oneCounter = x;
 	int twoCounter = y;
 
@@ -29,12 +27,12 @@ void lcm(int x, int y) {
 		}
 	}
 	cout << "The least common multiplier is " << y << endl;
-
+	return y;
 }
 
 
 	int main() {
-		int num1, num2;
+		int num1, num2,lcm;
 		char stay;
 
 		cout << "Enter your first number" << endl;
@@ -43,11 +41,10 @@ void lcm(int x, int y) {
 		cout << "Enter your second number" << endl;
 		cin >> num2;
 
-		primeNum(num1, num2);
-		lcm(num1, num2);
+		lcm = leastComm(num1, num2);
+		primeNum(num1, lcm);
 
 		cin >> stay;
 		
-
 		return 0;
 	}
